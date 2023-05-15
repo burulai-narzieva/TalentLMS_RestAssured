@@ -10,7 +10,7 @@ import ui.BaseUiTest;
 
 @Epic("Login")
 @Feature("Login functionality")
-public class LoginTests extends BaseUiTest {
+public class   LoginTests extends BaseUiTest {
 
 
     @Test(description = "Verify user can login with valid credentials")
