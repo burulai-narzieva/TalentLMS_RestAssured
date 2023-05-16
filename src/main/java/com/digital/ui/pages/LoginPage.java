@@ -16,7 +16,7 @@ public class LoginPage extends BasePage{
 
 
     public LoginPage openPage(){
-        Driver.getDriver().get(getProperty("applicationUrl2"));
+        Driver.getDriver().get(getProperty("applicationUrl"));
         return this;
     }
 

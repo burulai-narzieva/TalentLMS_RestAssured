@@ -14,6 +14,7 @@ public abstract class BaseUiTest implements DriverActions {
 
     public WebDriver driver;
 
+
     @BeforeClass
     public void setUp() {
         driver = Driver.getDriver();

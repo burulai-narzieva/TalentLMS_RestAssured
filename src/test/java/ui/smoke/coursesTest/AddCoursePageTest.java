@@ -50,6 +50,7 @@ public class AddCoursePageTest extends BaseUiTest{
                 .fillCourseInputs()
                 .saveNewCourse()
                 .checkAddedCourseWithAssert();
+
     }
 
     @Test(description = "Verify user can add course with price")

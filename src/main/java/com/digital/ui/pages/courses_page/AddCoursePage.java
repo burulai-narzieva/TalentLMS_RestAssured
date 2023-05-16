@@ -17,6 +17,7 @@ import java.util.Random;
  */
 
 public class AddCoursePage extends BasePage {
+
     @FindBy(xpath = "//a[text()='Add course']")
     public WebElement addCourseBtn;
 
@@ -60,8 +61,6 @@ public class AddCoursePage extends BasePage {
 
     @FindBy(tagName = "td")
     public List<WebElement> listOfCourses;
-
-
 
 
     public static String getRandomPrice () {

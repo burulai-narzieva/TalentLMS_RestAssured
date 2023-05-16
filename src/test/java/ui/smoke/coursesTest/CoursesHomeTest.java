@@ -32,6 +32,7 @@ public class CoursesHomeTest {
         coursesHomePage.reportCourseBtnOnCoursePage();
     }
 
+
     @Test (description = "Verify user can click Edit Course button")
     @Severity(SeverityLevel.CRITICAL)
     @TestCase (id = 10)
@@ -39,12 +40,14 @@ public class CoursesHomeTest {
         coursesHomePage.editCourseBtnOnCoursePage();
     }
 
+
     @Test (description = "Verify user can click Clone Course button")
     @Severity(SeverityLevel.CRITICAL)
     @TestCase (id = 11)
     public void cloningCourseAndAssert() {
         coursesHomePage.cloneCourseBtnOnCoursePage();
     }
+
 
     @Test (description = "Verify user can click Confirm Clone Course button")
     @Severity(SeverityLevel.CRITICAL)
@@ -54,12 +57,14 @@ public class CoursesHomeTest {
         coursesHomePage.confirmClone();
     }
 
+
     @Test (description = "Verify user can click Delete Course button")
     @Severity(SeverityLevel.CRITICAL)
     @TestCase (id = 13)
     public void deletingCourseAndAssert() {
         coursesHomePage.deleteCourseBtnOnCoursePage();
     }
+
 
     @Test (description = "Verify user can click Confirm Delete Course button")
     @Severity(SeverityLevel.CRITICAL)
@@ -68,6 +73,7 @@ public class CoursesHomeTest {
         coursesHomePage.deleteCourseBtnOnCoursePage();
         coursesHomePage.confirmDeletion();
     }
+
 
     @Test (description = "Verify user can click View Course button")
     @Severity(SeverityLevel.CRITICAL)

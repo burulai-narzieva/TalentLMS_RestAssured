@@ -19,8 +19,6 @@ public class WebElementActions {
 
     Actions actions = new Actions(Driver.getDriver());
 
-
-
     public WebElementActions input(WebElement element,String txt){
         waitElementToBeDisplayed(element);
         element.sendKeys(txt);
