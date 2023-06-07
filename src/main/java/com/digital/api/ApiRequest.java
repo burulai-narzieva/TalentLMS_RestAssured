@@ -1,12 +1,12 @@
 package com.digital.api;
 
 
+import io.restassured.http.ContentType;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import lombok.Data;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 
 
 import java.util.HashMap;
@@ -16,10 +16,10 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 
 
-//@Data
+@Slf4j
+@Data
 public class ApiRequest {
 
-    private static Logger logger = LogManager.getLogger(ApiRequest.class);
     protected String url;
     protected String apiKey;
     protected Headers headers;
@@ -44,7 +44,7 @@ public class ApiRequest {
 
 
     public Response get(String endPoint){
-        logger.info("Performed Get {}", endPoint);
+        log.info("Performed Get {}", endPoint);
         this.response = given()
                 .spec(this.specific)
                 .get(endPoint);
@@ -53,7 +53,7 @@ public class ApiRequest {
     }
 
     public Response get(String endPoint, Map<String, String> pathParam){
-        logger.info("Performed Get {}", endPoint);
+        log.info("Performed Get {}", endPoint);
         this.response = given()
                 .spec(this.specific)
                 .pathParams(pathParam)
@@ -62,20 +62,32 @@ public class ApiRequest {
         return this.response;
     }
 
-    public Response post(String endPoint, String body) {
-        logger.info("Performed POST {}", endPoint);
-        logger.info("Body is {}", body);
+//    public Response post(String endPoint, String body) {
+//        log.info("Performed POST {}", endPoint);
+//        log.info("Body is {}", body);
+//        this.response = given()
+//                .spec(this.specific)
+//                .body(body)
+//                .post(endPoint);
+//        logResponse();
+//        return this.response;
+//    }
+
+    public Response post(String endpoint, String body){
+        log.info("Performed POST: {}", endpoint);
+        log.info("Body is: {}", body);
         this.response = given()
+                .contentType(ContentType.URLENC)
                 .spec(this.specific)
                 .body(body)
-                .post(endPoint);
+                .post(endpoint);
         logResponse();
         return this.response;
     }
 
     public Response put(String endPoint, String body) {
-        logger.info("Performed PUT {}", endPoint);
-        logger.info("Body is {}", body);
+        log.info("Performed PUT {}", endPoint);
+        log.info("Body is {}", body);
         this.response = given()
                 .spec(this.specific)
                 .body(body)
@@ -85,8 +97,8 @@ public class ApiRequest {
     }
 
     public Response patch(String endPoint, String body) {
-        logger.info("Performed PATCH {}", endPoint);
-        logger.info("Body is {}", body);
+        log.info("Performed PATCH {}", endPoint);
+        log.info("Body is {}", body);
         this.response = given()
                 .spec(this.specific)
                 .body(body)
@@ -95,18 +107,11 @@ public class ApiRequest {
         return this.response;
     }
 
-    public Response delete(String endPoint) {
-        this.response = given()
-                .spec(this.specific)
-                .delete(endPoint);
-        logResponse();
-        return this.response;
-    }
 
 
     public void logResponse() {
-        logger.warn("Response id {}", this.response.getBody().asPrettyString());
-        logger.warn("Status code is: {}", this.response.getStatusCode());
+        log.warn("Response id {}", this.response.getBody().asPrettyString());
+        log.warn("Status code is: {}", this.response.getStatusCode());
     }
 
     public String generateEndPoints(String ...args) {
