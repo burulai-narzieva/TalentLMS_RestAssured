@@ -1,8 +1,7 @@
 package com.digital.api.controller;
 
 import com.digital.api.ApiRequest;
-import com.digital.entities.Courses;
-import com.digital.entities.User;
+import com.digital.entities_pojo.Courses;
 
 import static com.digital.api.BaseEndPoints.*;
 

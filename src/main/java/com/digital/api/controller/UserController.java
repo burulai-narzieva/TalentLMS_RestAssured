@@ -2,7 +2,7 @@ package com.digital.api.controller;
 
 import com.digital.api.ApiRequest;
 import static com.digital.api.BaseEndPoints.*;
-import com.digital.entities.User;
+import com.digital.entities_pojo.User;
 import com.digital.utils.EntitiesManager;
 import com.digital.utils.JsonUtils;
 import io.restassured.response.Response;

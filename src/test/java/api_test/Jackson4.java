@@ -20,16 +20,16 @@ public class Jackson4 {
                 "    \"engine\": \"4.0\"\n" +
                 "}";
 
-//        // readValue:  JSON --> Java
-//        CarPojo2 bmw = objectMapper.readValue(bmwPayLoad, CarPojo2.class);
-//        System.out.println(bmw.getModel());
-//
-//        CarPojo2 audi = new CarPojo2("A^", "red", "2.4");
-//
-//
-//        // writeValueAsString:  Java --> JSON
-//        String audiPayload = objectMapper.writeValueAsString(audi);
-//        System.out.println(audiPayload);
+        // readValue:  JSON --> Java
+        CarPojo2 bmw = objectMapper.readValue(bmwPayLoad, CarPojo2.class);
+        System.out.println(bmw.getModel());
+
+        CarPojo2 audi = new CarPojo2("A^", "red", "2.4");
+
+
+        // writeValueAsString:  Java --> JSON
+        String audiPayload = objectMapper.writeValueAsString(audi);
+        System.out.println(audiPayload);
 
 
         CarPojo2 audi2 = new CarPojo2("A^", "red", "2.4");

@@ -1,6 +1,6 @@
 package com.digital.utils;
 
-import com.digital.entities.User;
+import com.digital.entities_pojo.User;
 
 public class EntitiesManager {
 

@@ -1,6 +1,6 @@
 package api_test.smoke;
 
-import com.digital.entities.User;
+import com.digital.entities_pojo.User;
 import com.digital.utils.EntitiesManager;
 import org.testng.AssertJUnit;
 import org.testng.annotations.AfterClass;

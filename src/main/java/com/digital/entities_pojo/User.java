@@ -1,4 +1,4 @@
-package com.digital.entities;
+package com.digital.entities_pojo;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
