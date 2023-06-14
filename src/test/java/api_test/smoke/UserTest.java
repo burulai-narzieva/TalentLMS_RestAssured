@@ -19,7 +19,7 @@ public class UserTest extends BaseApiTest{
     @Test
     public void testUsers() {
         User createUser = userController.createUser(user);
-        User receivedUser = userController.receiveSingleUsers("id", createUser.getId());
+        User receivedUser = userController.receiveSingleUserWithQuery("id", createUser.getId());
         user.setId(createUser.getId());
         userController.getResponse().then().statusCode(200);
         AssertJUnit.assertNotNull(receivedUser);

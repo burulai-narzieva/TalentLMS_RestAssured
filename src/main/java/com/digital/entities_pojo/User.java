@@ -12,9 +12,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = true)   // если из JSON приходить поля которые мы здесь
+// не указали, он не будет ругаться, а просто даст exception о том что нет такие поля
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_NULL)     //
 public class User {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     String id;

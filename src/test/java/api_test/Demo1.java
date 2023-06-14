@@ -86,11 +86,12 @@ public class Demo1 {
 
         // JSONPATH  -  дает доступ к каждому полю ответа
         JsonPath jsonPath = response.jsonPath();
-        int totalUsers = jsonPath.getInt("total");
-        System.out.println(totalUsers);
+        System.out.println(jsonPath);
+//        int totalUsers = jsonPath.getInt("total");
+//        System.out.println(totalUsers);
 
 
-        String name = jsonPath.getString("data[1].first_name");
+        String name = jsonPath.getString("data[1].id");
         System.out.println(name);
 
     }
