@@ -134,6 +134,8 @@ public class UserController extends ApiRequest {
 //
 //        System.out.println(userController.isUserOnline("user_id", "7"));
 
+        System.out.println("Test");
+
 
     }
 }
